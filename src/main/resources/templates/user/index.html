@@ -28,7 +28,7 @@
 
 
           <!-- Blog Post -->
-          <th:block th:each="post : ${news}" th:replace="user/inc/simplePost :: simplePost(${post})"></th:block>
+          <th:block th:each="data : ${news}" th:include="user/inc/simplePost :: simplePost(${data})"></th:block>
 
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
