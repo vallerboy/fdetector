@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <div class="col">
-                <span th:if="${info != null}" th:text="${info}" class="alert alert-success" role="alert"></span>
-                <br/>
+                <p th:if="${info != null}" th:text="${info}" class="alert alert-success" role="alert"></p>
+
 
                 <form action="/admin/news/add" method="post" th:object="${newsForm}">
                     <div class="form-group">

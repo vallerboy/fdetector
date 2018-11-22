@@ -32,7 +32,6 @@ public class NewsController {
         newsService.addNewNews(newsForm);
         model.addAttribute("info", "Dodano newsa!");
 
-
         return "admin/addNews";
     }
 

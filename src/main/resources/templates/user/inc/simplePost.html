@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div th:fragment="simplePost(data)" class="card mb-4">
+        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title" th:text="${data.getTitle()}"></h2>
+            <p class="card-text" th:text="${data.getNewsFakeProvement()}"></p>
+            <a th:href="'/post/' + ${data.getId()}" class="btn btn-primary">Czytaj więcej &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Dodany o <strong th:text="${data.getCreateDate()}"></strong> przez
+            <span th:text="${data.getAuthor()}"></span>
+        </div>
+    </div>
+</html>

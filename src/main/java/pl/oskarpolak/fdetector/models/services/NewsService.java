@@ -6,6 +6,8 @@ import pl.oskarpolak.fdetector.models.NewsEntity;
 import pl.oskarpolak.fdetector.models.forms.NewsForm;
 import pl.oskarpolak.fdetector.models.repositories.NewsRepository;
 
+import java.util.List;
+
 @Service
 public class NewsService {
 
@@ -18,6 +20,10 @@ public class NewsService {
 
     public void addNewNews(NewsForm newsForm) {
         newsRepository.save(new NewsEntity(newsForm));
+    }
+
+    public Iterable<NewsEntity> loadAllNews(){
+        return newsRepository.findAll();
     }
 
 }
