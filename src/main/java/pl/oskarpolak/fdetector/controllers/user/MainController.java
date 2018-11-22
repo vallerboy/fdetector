@@ -1,4 +1,4 @@
-package pl.oskarpolak.fdetector.controllers;
+package pl.oskarpolak.fdetector.controllers.user;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-        return "index";
+        return "user/index";
     }
 
 }
