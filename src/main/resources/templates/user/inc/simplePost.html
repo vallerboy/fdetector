@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div th:fragment="simplePost(data)"  th:with="data = ${data}" class="card mb-4">
-        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-        <div class="card-body">
-            <h2 class="card-title" th:text="${data.getTitle()}"></h2>
-            <p class="card-text" th:text="${data.getNewsFakeProvement()}"></p>
-            <a th:href="'/post/' + ${data.getId()}" class="btn btn-primary">Czytaj więcej &rarr;</a>
-        </div>
-        <div class="card-footer text-muted">
-            Dodany o <strong th:text="${data.getCreateDate()}"></strong> przez
-            <span th:text="${data.getAuthor()}"></span>
-        </div>
+    <div th:fragment="simplePost(postData)">
+            <div class="card mb-4">
+                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title" th:text="${postData.getTitle()}"></h2>
+                    <p class="card-text" th:text="${postData.getNewsFakeProvement()}"></p>
+                    <a th:href="'/post/' + ${postData.getId()}" class="btn btn-primary">Czytaj więcej &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Dodany o <strong th:text="${postData.getCreateDate()}"></strong> przez
+                    <span th:text="${postData.getAuthor()}"></span>
+                </div>
+            </div>
     </div>
 </html>

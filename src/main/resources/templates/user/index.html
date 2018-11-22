@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,15 +28,17 @@
 
 
           <!-- Blog Post -->
-          <th:block th:each="data : ${news}" th:include="user/inc/simplePost :: simplePost(${data})"></th:block>
+          <th:block th:each="data : ${news.getContent()}">
+             <div th:include="user/inc/simplePost :: simplePost(postData=${data})"></div>
+          </th:block>
 
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
+              <a th:if=${news.hasPrevious()} class="page-link" th:href="'/page/' + ${(news.getNumber() - 1)}">&larr; Poprzednia</a>
             </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
+            <li class="page-item">
+              <a th:if=${news.hasNext()} class="page-link" th:href="'/page/' + ${(news.getNumber() + 1)}">Następna &rarr;</a>
             </li>
           </ul>
 
